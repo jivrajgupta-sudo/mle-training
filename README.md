@@ -31,6 +31,25 @@ Each command accepts `--log-level`, `--log-path`, and `--no-console-log`. Use `-
 
 Installed command equivalents are `housing-ingest`, `housing-train`, and `housing-score`.
 
+## MLflow tracking
+
+Install the updated environment, then run the complete workflow:
+
+```bash
+pip install -e .
+python scripts/run_workflow.py
+```
+
+This creates one parent run named `housing-workflow` with nested child runs for data ingestion, model training, and model scoring. The default tracking store is a local `mlflow.db` SQLite database. You can use another store or an MLflow server with `--tracking-uri` and select an experiment with `--experiment-name`.
+
+Launch the local MLflow UI with:
+
+```bash
+mlflow ui --backend-store-uri sqlite:///mlflow.db --host 127.0.0.1 --port 5000
+```
+
+Open `http://127.0.0.1:5000`, then run the workflow in another terminal. The walkthrough notebook is [02-mlflow-walkthrough.ipynb](notebooks/reference/02-mlflow-walkthrough.ipynb).
+
 ## Testing
 
 ```bash

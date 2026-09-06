@@ -9,3 +9,4 @@ dependencies:
       - pytest
       - sphinx
       - sphinx-rtd-theme
+      - mlflow>=2.10

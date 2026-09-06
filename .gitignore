@@ -21,5 +21,8 @@ data/*
 artifacts/*
 !artifacts/.gitkeep
 
+mlruns/
+mlflow.db
+
 .ipynb_checkpoints/
 .venv/
