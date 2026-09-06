@@ -1,0 +1,11 @@
+name: housing-project
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scikit-learn
+  - pip
+  - pip:
+      - pytest
+      - sphinx
+      - sphinx-rtd-theme
