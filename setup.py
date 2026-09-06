@@ -11,12 +11,14 @@ setup(
         "numpy>=1.23",
         "pandas>=1.5",
         "scikit-learn>=1.2",
+        "mlflow>=2.10",
     ],
     entry_points={
         "console_scripts": [
             "housing-ingest=housing_project.cli:ingest_main",
             "housing-train=housing_project.cli:train_main",
             "housing-score=housing_project.cli:score_main",
+            "housing-run=housing_project.cli:workflow_main",
         ]
     },
 )
