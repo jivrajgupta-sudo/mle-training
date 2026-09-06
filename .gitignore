@@ -6,6 +6,9 @@ __pycache__/
 htmlcov/
 build/
 dist/
+release/
+*.whl
+*.tar.gz
 docs/build/
 project-documentation.zip
 

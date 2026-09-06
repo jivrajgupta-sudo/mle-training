@@ -5,10 +5,37 @@ This project refactors the California housing example into an installable Python
 ## Setup
 
 ```bash
-conda env create -f env.yaml
+conda env create -f env.yml
 conda activate housing-project
 pip install -e .
 ```
+
+## Build distribution archives
+
+Install the build tool and create both shareable Python distribution formats:
+
+```bash
+python -m pip install --upgrade build
+python -m build
+```
+
+This creates a wheel and a source archive in `dist/`:
+
+- `housing_project-0.3.0-py3-none-any.whl`
+- `housing_project-0.3.0.tar.gz`
+
+Install the wheel in a clean environment with:
+
+```bash
+python -m pip install dist/housing_project-0.3.0-py3-none-any.whl
+housing-ingest --help
+housing-train --help
+housing-score --help
+```
+
+The source archive can be installed with `python -m pip install dist/housing_project-0.3.0.tar.gz`.
+
+For the final deployment submission, include the wheel, source archive, `env.yml`, `README.md`, and the `dist/` installation instructions in a ZIP. Do not include local datasets, logs, MLflow databases, virtual environments, or generated model artifacts.
 
 ## Workflow
 
