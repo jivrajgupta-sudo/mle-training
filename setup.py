@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="housing-project",
-    version="0.1.0",
+    version="0.3.0",
     description="A packageable California housing price workflow",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
